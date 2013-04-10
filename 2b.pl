@@ -1,0 +1,2 @@
+removeElement(ELEMENT, [ELEMENT|TAIL], TAIL).
+removeElement(ELEMENT, [LIST, HEAD|TAIL], [LIST|NEWTAIL]) :- removeElement(ELEMENT, [HEAD|TAIL], NEWTAIL).
