@@ -12,5 +12,4 @@ mysplit([H1,H2|T1],[H1|L1],[H2|L2]) :- mysplit(T1,L1,L2).
 
 mysort([],[]).
 mysort([X],[X]).
-
-mysort(L, X) :- mysplit(L,E,U),mysort(E,S),mysort(U,R),mymerge(S,R,X).
+mysort(L,SORTED) :- mysplit(L,ODD,EVEN),mysort(ODD,OSORT),mysort(EVEN,ESORT),mymerge(OSORT,ESORT,SORTED).

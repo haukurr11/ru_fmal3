@@ -1,2 +1,2 @@
 numElements(0,[]).
-numElements(SUM,[_|TAIL]) :- numElements(TAILSUM,TAIL), SUM is TAILSUM+1.
+numElements(N,[_|T]) :- numElements(N_TAIL,T), N is N_TAIL+1.

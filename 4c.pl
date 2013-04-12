@@ -1,3 +1,3 @@
 leaves(nil,[]). 
 leaves(t(X,nil,nil), [X]).
-leaves(t(_,L,R), O) :- leaves(L,U),leaves(R,Z),append(U,Z,O).
+leaves(t(_,L,R),LEAVES) :- leaves(L,LEAVES_L),leaves(R,LEAVES_R),append(LEAVES_L,LEAVES_R,LEAVES).

@@ -1,9 +1,8 @@
-expr(A) :- term(A).
-expr(L) :- append(N,C,L),append(A,[+],N),term(A),expr(C).
+expr(X) :- term(X).
+expr(X) :- append(TERMPLUS,EXPR,X),append(TERM,[+],TERMPLUS),term(TERM),expr(EXPR).
 
-term(A) :- factor(A).
-term(L) :- append(N,C,L),append(A,[*],N),term(A),expr(C).
+term(X) :- factor(X).
+term(X) :- append(FACTORMULT,EXPR,X),append(FACTOR,[*],FACTORMULT),factor(FACTOR),expr(EXPR).
 
-factor([A]) :- number(A).
-factor(A) :- number(A).
-factor(L) :- append(['('],A,N),append(N,[')'],L),expr(A).
+factor([X]) :- number(X).
+factor(X) :- append(['('],EXPR,RP_EXPR),append(RP_EXPR,[')'],X),expr(EXPR).

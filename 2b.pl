@@ -1,2 +1,2 @@
-removeElement(ELEMENT, [ELEMENT|TAIL], TAIL).
-removeElement(ELEMENT, [LIST, HEAD|TAIL], [LIST|NEWTAIL]) :- removeElement(ELEMENT, [HEAD|TAIL], NEWTAIL).
+removeElement(E, [E|T], T).
+removeElement(E, [L, H|T], [L|NEWT]) :- removeElement(E, [H|T], NEWT).
